@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikša Halas | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Ćao, ja sam Nikša 👋</h1>
+        <p>Web dizajner i developer koji voli da pravi korisne stvari.</p>
+        <p>
+            👨‍💻 Radim kao web dizajner i front-end developer, sa strašću za pravljenje jednostavnih, lepih i funkcionalnih digitalnih rešenja. Volim da spajam dizajn i kod, stvarajući korisničko iskustvo koje je i estetski privlačno i praktično za korišćenje.
+          </p>
+          <p>
+            🎨 Dizajn mi je važan koliko i funkcionalnost – svaki piksel ima svoje mesto, a svaki red koda svoju svrhu. Bilo da radim na dizajnu sajta, korisničkom interfejsu ili kodiranju front-end funkcionalnosti, uvek težim jednostavnosti i korisnosti.
+          </p>
+          <p>
+            📍 Trenutno sam fokusiran na razvoj responzivnih web sajtova i aplikacija koristeći moderne tehnologije poput HTML, CSS, JavaScript, React i Figma za dizajn.
+          </p>
+      </div>
+      <div class="hero-img">
+        <img src="images/mojaslika.jpg" alt="" class="profile-pic">
+      </div>
+    </header>
+  
+    <section>
+      <div class="section-title">Šta radim</div>
+      <div class="cards">
+        <div class="card">
+          <h3>Web Dizajn</h3>
+          <p>Pravim lepe i funkcionalne sajtove fokusirane na korisničko iskustvo.</p>
+        </div>
+        <div class="card">
+          <h3>Email Kampanje</h3>
+          <p>Moderni dizajn i strategija za visok CTR i engagement.</p>
+        </div>
+        <div class="card">
+          <h3>UI/UX za aplikacije</h3>
+          <p>Intuitivan i responzivan interfejs za korisničke potrebe.</p>
+        </div>
+      </div>
+    </section>
+  
+    <section>
+      <div class="section-title">Moj rad</div>
+      <div class="cards">
+        <div class="card">
+          <h3>Webinar Promo</h3>
+          <p>Dizajniran i kodiran email za promociju online događaja.</p>
+          <div class="gallery">
+            <img src="images/slika-webinar1.png" alt="webinar">
+            <img src="images/slika-webinar2.png" alt="webinar">
+          </div>
+        </div>
+        <div class="card">
+          <h3>Teretana App</h3>
+          <p>Prava aplikacija za upravljanje članstvom i treninzima.</p>
+          <div class="gallery">
+            <img src="images/slika-teretana1.png" alt="teretana">
+            <img src="images/slika-teretana2.png" alt="teretana">
+          </div>
+          <p class="github">Ovde mozete pogledati celu aplikaciju: <a href="https://github.com/NiksaHalas/Gym-membership-application?tab=readme-ov-file" target="_blank">Github</a></p>
+        </div>
+        <div class="card">
+          <h3>Promocioni Email za aplikaciju</h3>
+          <p>Email za promociju fitness aplikacije</p>
+          <div class="gallery">
+            <img src="images/slika-fitness1.png" alt="teretana">
+            <img src="images/slika-fitness2.png" alt="teretana">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section>
+      <div class="section-title">Kontakt</div>
+      <p>niksah003@gmail.com</p>
+      <p>LinkedIn | Instagram | GitHub</p>
+    </section>
+  
+    <footer>
+      <p>&copy; 2025 Nikša Halas. All rights reserved.</p>
+    </footer>
+  
+    <div class="modal" id="imageModal">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <span class="modal-nav left" onclick="prevImage()">&#10094;</span>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="Preview">
+      </div>
+      <span class="modal-nav right" onclick="nextImage()">&#10095;</span>
+    </div>
+  
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      let currentImgIndex = 0;
+      let allImages = [];
+  
+      document.querySelectorAll(".gallery img").forEach((img, index) => {
+        img.addEventListener("click", () => {
+          allImages = Array.from(img.closest('.gallery').querySelectorAll('img'));
+          currentImgIndex = allImages.indexOf(img);
+          modal.style.display = "block";
+          modalImg.src = allImages[currentImgIndex].src;
+          modalImg.classList.remove("zoomed");
+
+        });
+      });
+  
+      function closeModal() {
+        modal.style.display = "none";
+      }
+  
+      function prevImage() {
+        if (currentImgIndex > 0) {
+          currentImgIndex--;
+          modalImg.src = allImages[currentImgIndex].src;
+        }
+      }
+  
+      function nextImage() {
+        if (currentImgIndex < allImages.length - 1) {
+          currentImgIndex++;
+          modalImg.src = allImages[currentImgIndex].src;
+        }
+      }
+  
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+      modalImg.addEventListener("click", () => {
+  modalImg.classList.toggle("zoomed");
+});
+
+const modalContent = document.querySelector(".modal-content");
+
+modalImg.addEventListener("click", () => {
+  modalContent.classList.toggle("zoomed");
+});
+
+modalContent.addEventListener("mousemove", (e) => {
+  if (!modalContent.classList.contains("zoomed")) return;
+
+  const rect = modalContent.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+  modalImg.style.transformOrigin = `${x}% ${y}%`;
+});
+
+
+    </script>
+  </body>
+</html>

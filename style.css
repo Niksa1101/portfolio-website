@@ -1,0 +1,236 @@
+:root {
+    --bg: #0d1117;
+    --accent: #4c72f1;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --card-bg: #161b22;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+  }
+  
+  /* Hero section */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    flex-wrap: wrap;
+    padding-left: 100px;
+  }
+  
+  .hero-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+  
+  .btn {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #345de6;
+  }
+  
+  .hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-pic {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Sections */
+  section {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .card p {
+    color: var(--muted);
+  }
+  
+  /* Kontakt */
+  section p {
+    font-size: 1rem;
+    color: var(--muted);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 3rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-text {
+      text-align: center;
+    }
+  
+    .hero-img {
+      margin-top: 2rem;
+    }
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    object-fit: cover;
+    max-height: 200px;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .modal img {
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+  }
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+  }
+  .modal-nav.left {
+    left: 10px;
+  }
+  .modal-nav.right {
+    right: 10px;
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  .modal-content {
+    position: relative;
+    overflow: auto;
+    max-height: 90vh;
+    max-width: 90vw;
+  }
+  
+  .modal-content img {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .modal-content img.zoomed {
+    transform: scale(2);
+    cursor: zoom-out;
+  }
+  
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+  
