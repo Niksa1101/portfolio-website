@@ -1,161 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nikša Halas | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
-<body>
-    <header class="hero">
-        <div class="hero-text max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1>Ćao, ja sam Nikša 👋</h1>
-        <p>Web dizajner i developer koji voli da pravi korisne stvari.</p>
-        <p>
-            👨‍💻 Radim kao web dizajner i front-end developer, sa strašću za pravljenje jednostavnih, lepih i funkcionalnih digitalnih rešenja. Volim da spajam dizajn i kod, stvarajući korisničko iskustvo koje je i estetski privlačno i praktično za korišćenje.
-          </p>
-          <p>
-            🎨 Dizajn mi je važan koliko i funkcionalnost – svaki piksel ima svoje mesto, a svaki red koda svoju svrhu. Bilo da radim na dizajnu sajta, korisničkom interfejsu ili kodiranju front-end funkcionalnosti, uvek težim jednostavnosti i korisnosti.
-          </p>
-          <p>
-            📍 Trenutno sam fokusiran na razvoj responzivnih web sajtova i aplikacija koristeći moderne tehnologije poput HTML, CSS, JavaScript, React i Figma za dizajn.
-          </p>
-      </div>
-      <div class="hero-img max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg">
-        <img src="mojaslika.jpg" alt="" class="profile-pic w-full h-auto rounded-full shadow-lg">
-      </div>
-    </header>
-  
-    <section>
-      <div class="section-title">Šta radim</div>
-      <div class="cards grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
-        <div class="card">
-          <h3>Web Dizajn</h3>
-          <p>Pravim lepe i funkcionalne sajtove fokusirane na korisničko iskustvo.</p>
-        </div>
-        <div class="card">
-          <h3>Email Kampanje</h3>
-          <p>Moderni dizajn i strategija za visok CTR i engagement.</p>
-        </div>
-        <div class="card">
-          <h3>UI/UX za aplikacije</h3>
-          <p>Intuitivan i responzivan interfejs za korisničke potrebe.</p>
-        </div>
-      </div>
-    </section>
-  
-    <section>
-      <div class="section-title">Moj rad</div>
-      <div class="cards grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
-        <div class="card">
-          <h3>Webinar Promo</h3>
-          <p>Dizajniran i kodiran email za promociju online događaja.</p>
-          <div class="gallery grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            <img src="slika-webinar1.png" alt="webinar">
-            <img src="slika-webinar2.png" alt="webinar">
-          </div>
-        </div>
-        <div class="card">
-          <h3>Teretana App</h3>
-          <p>Prava aplikacija za upravljanje članstvom i treninzima.</p>
-          <div class="gallery">
-            <img src="slika-teretana1.png" alt="teretana">
-            <img src="slika-teretana2.png" alt="teretana">
-          </div>
-          <p class="github">Ovde mozete pogledati celu aplikaciju: <a href="https://github.com/NiksaHalas/Gym-membership-application?tab=readme-ov-file" target="_blank">Github</a></p>
-        </div>
-        <div class="card">
-          <h3>Promocioni Email za aplikaciju</h3>
-          <p>Email za promociju fitness aplikacije</p>
-          <div class="gallery">
-            <img src="slika-fitness1.png" alt="teretana">
-            <img src="slika-fitness2.png" alt="teretana">
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <section>
-        <div class="section-title text-center text-xl sm:text-2xl mb-4">Kontakt</div>
-      <p>niksah003@gmail.com</p>
-      <p>LinkedIn | <a href="https://www.instagram.com/_niksa_h/">Instagram</a> | GitHub</p>
-    </section>
-  
-    <footer>
-        <p class="text-center text-sm text-gray-400 px-4 py-6">&copy; 2025 Nikša Halas. All rights reserved.</p>
-    </footer>
-  
-    <div class="modal" id="imageModal">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <span class="modal-nav left" onclick="prevImage()">&#10094;</span>
-      <div class="modal-content">
-        <img id="modalImage" src="" alt="Preview">
-      </div>
-      <span class="modal-nav right" onclick="nextImage()">&#10095;</span>
+<body class="bg-[#363020] text-[#EAFFDA] font-sans">
+  <!-- Hero Section -->
+  <header class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#605C4E] to-[#363020] text-[#EAFFDA]">
+    <h1 class="text-6xl font-extrabold mb-4" data-aos="fade-down" data-aos-duration="2000">Ćao, ja sam <span class="text-[#A49966]">Nikša</span> 👋</h1>
+    <p class="text-lg max-w-2xl mb-6" data-aos="fade-up" data-aos-duration="2000">Web dizajner i developer sa strašću za pravljenje korisnih i lepih digitalnih rešenja.</p>
+    <a href="#about" class="bg-[#A49966] hover:bg-[#C7C7A6] text-[#363020] px-6 py-3 rounded-full shadow-lg transition-all duration-300" data-aos="zoom-in" data-aos-duration="2000" >Saznaj više o meni</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-[#605C4E]">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-right" data-aos-duration="2000">O meni</h2>
+      <p class="text-[#EAFFDA] max-w-3xl mx-auto" data-aos="fade-left" data-aos-duration="2000">Ja sam web dizajner i front-end developer sa strašću za pravljenje jednostavnih, lepih i funkcionalnih digitalnih rešenja. Volim da spajam dizajn i kod, stvarajući korisničko iskustvo koje je i estetski privlačno i praktično za korišćenje.</p>
     </div>
-  
-    <script>
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImage");
-      let currentImgIndex = 0;
-      let allImages = [];
-  
-      document.querySelectorAll(".gallery img").forEach((img, index) => {
-        img.addEventListener("click", () => {
-          allImages = Array.from(img.closest('.gallery').querySelectorAll('img'));
-          currentImgIndex = allImages.indexOf(img);
-          modal.style.display = "block";
-          modalImg.src = allImages[currentImgIndex].src;
-          modalImg.classList.remove("zoomed");
+  </section>
 
-        });
-      });
-  
-      function closeModal() {
-        modal.style.display = "none";
-      }
-  
-      function prevImage() {
-        if (currentImgIndex > 0) {
-          currentImgIndex--;
-          modalImg.src = allImages[currentImgIndex].src;
-        }
-      }
-  
-      function nextImage() {
-        if (currentImgIndex < allImages.length - 1) {
-          currentImgIndex++;
-          modalImg.src = allImages[currentImgIndex].src;
-        }
-      }
-  
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          closeModal();
-        }
-      };
-      modalImg.addEventListener("click", () => {
-  modalImg.classList.toggle("zoomed");
-});
+  <!-- Skills and Projects Section -->
+  <section id="skills-projects" class="py-16 bg-[#C7C7A6]">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-up" data-aos-duration="2000">Veštine i Projekti</h2>
+      <p class="text-[#363020] max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="2000">Kombinujem svoje veštine u dizajnu i razvoju kako bih kreirao projekte koji su funkcionalni i vizuelno privlačni.</p>
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Skill 1 -->
+        <div class="bg-[#EAFFDA] rounded-lg shadow-lg p-6 max-w-xs" data-aos="flip-left" data-aos-duration="2000">
+          <h3 class="text-xl font-bold mb-2 text-[#363020]">Web Dizajn</h3>
+          <p class="text-[#605C4E]">Kreiranje vizuelno privlačnih i funkcionalnih dizajna.</p>
+        </div>
+        <!-- Skill 2 -->
+        <div class="bg-[#EAFFDA] rounded-lg shadow-lg p-6 max-w-xs" data-aos="flip-up" data-aos-duration="2000">
+          <h3 class="text-xl font-bold mb-2 text-[#363020]">Front-End Razvoj</h3>
+          <p class="text-[#605C4E]">Pisanje čistog i optimizovanog koda za web aplikacije.</p>
+        </div>
+        <!-- Skill 3 -->
+        <div class="bg-[#EAFFDA] rounded-lg shadow-lg p-6 max-w-xs" data-aos="flip-right" data-aos-duration="2000">
+          <h3 class="text-xl font-bold mb-2 text-[#363020]">Responzivni Dizajn</h3>
+          <p class="text-[#605C4E]">Osiguravanje da sajtovi izgledaju sjajno na svim uređajima.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <!-- Project 1 -->
+<div class="bg-[#EAFFDA] rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-duration="2000">
+  <img src="images/slika-webinar1.png" alt="Webinar Promo" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox('images/slika-webinar1.png')">
+  <div class="p-6">
+    <h3 class="text-xl font-bold mb-2 text-[#363020]">Webinar Promo</h3>
+    <p class="text-[#605C4E] mb-4">Dizajniran i kodiran email za promociju online događaja.</p>
+  </div>
+</div>
 
-const modalContent = document.querySelector(".modal-content");
+<!-- Project 2 -->
+<div class="bg-[#EAFFDA] rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-duration="2000">
+  <img src="images/slika-teretana1.png" alt="Teretana App" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox('images/slika-teretana1.png')">
+  <div class="p-6">
+    <h3 class="text-xl font-bold mb-2 text-[#363020]">Teretana App</h3>
+    <p class="text-[#605C4E] mb-4">Prava aplikacija za upravljanje članstvom i treninzima.</p>
+    <a href="https://github.com/NiksaHalas/Gym-membership-application" target="_blank" class="text-[#A49966] hover:underline">Pogledaj na GitHub-u</a>
+  </div>
+</div>
+        <!-- Project 3 -->
+        <div class="bg-[#EAFFDA] rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-duration="2000">
+          <img src="images/Cafe.png" alt="Example Website" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-[#363020]">Caffe Website</h3>
+            <p class="text-[#605C4E] mb-4">Moderni sajt sa fokusom na korisničko iskustvo i dizajn.</p>
+            <a href="https://cafexample.netlify.app/" target="_blank" class="text-[#A49966] hover:underline">Pogledaj sajt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-modalImg.addEventListener("click", () => {
-  modalContent.classList.toggle("zoomed");
-});
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-[#605C4E]">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-up" data-aos-duration="2000">Kontakt</h2>
+      <p class="text-[#EAFFDA] mb-4">niksah003@gmail.com</p>
+      <p class="text-[#EAFFDA] mb-4"><a href="https://www.linkedin.com/in/nik%C5%A1a-halas-403541273/" class="text-[#A49966] hover:underline">LinkedIn</a> | <a href="https://www.instagram.com/_niksa_h/" class="text-[#A49966] hover:underline">Instagram</a> | <a href="#" class="text-[#A49966] hover:underline">GitHub</a></p>
+    </div>
+  </section>
 
-modalContent.addEventListener("mousemove", (e) => {
-  if (!modalContent.classList.contains("zoomed")) return;
+  <!-- Footer -->
+  <footer class="py-6 bg-[#363020] text-center text-[#EAFFDA]">
+    &copy; 2025 Nikša Halas. Sva prava zadržana.
+  </footer>
 
-  const rect = modalContent.getBoundingClientRect();
-  const x = ((e.clientX - rect.left) / rect.width) * 100;
-  const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-  modalImg.style.transformOrigin = `${x}% ${y}%`;
-});
-
-
-    </script>
-  </body>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000, // Usporavanje animacija
+      Infinity: true, // Animacije se dešavaju samo jednom
+    });
+  </script>
+  <!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+  <img id="lightbox-img" src="" alt="Lightbox Image" class="max-w-full max-h-full">
+  <button class="absolute top-4 right-4 text-white text-2xl" onclick="closeLightbox()">✕</button>
+</div>
+</body>
 </html>
